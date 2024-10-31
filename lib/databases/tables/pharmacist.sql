@@ -1,0 +1,22 @@
+CREATE TABLE Pharmacist (
+    pharmacist_id VARCHAR(10) PRIMARY KEY,
+    pharmacy_id VARCHAR(10) REFERENCES Pharmacy(pharmacy_id) ON DELETE SET NULL,
+    owner BOOLEAN DEFAULT FALSE NOT NULL,
+    employee_status ENUM('Full-Time', 'Part-Time', 'Other'),
+    license_num VARCHAR(15) UNIQUE NOT NULL,
+    first_name VARCHAR(50) NOT NULL,
+    middle_initial CHAR(1),
+    last_name VARCHAR(50) NOT NULL,
+    gender ENUM('Male', 'Female', 'Non-Binary') NOT NULL,
+    name_extension VARCHAR(5),
+    birthdate DATE NOT NULL,
+    age INT GENERATED ALWAYS AS (YEAR(CURDATE()) - YEAR(birthdate)) STORED,
+    civil_status ENUM('Single', 'Married', 'Widowed', 'Separated', 'Divorced') NOT NULL,
+    home_address TEXT NOT NULL,
+    current_residence TEXT NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    contact_number VARCHAR(15) NOT NULL,
+    created_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    last_edited_date TIMESTAMP DEFAULT 'N/A' ON UPDATE CURRENT_TIMESTAMP,
+    last_login_date TIMESTAMP DEFAULT 'N/A'
+);
