@@ -4,6 +4,7 @@ import 'app/screens/auth/pharmacy_signup.dart';
 import 'app/screens/home/pharmacy_home.dart';
 import 'app/theme/app_theme.dart';
 import 'app/screens/auth/signup_choice_page.dart';
+import 'app/screens/redundant_pages/terms_of_service.dart';
 
 void main() {
   runApp(MyApp());
@@ -22,6 +23,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => LoginPage(),
         '/signup_choice': (context) => SignUpChoicePage(),
+        '/tos': (context) => TermsOfServicePage(),
+        '/newPharmacy': (context) => PharmacySignUpPage(),
         //'/signup': (context) => SignUpPage(),
         //'/home': (context) => PharmacyHome(),
       },

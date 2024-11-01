@@ -74,13 +74,13 @@ class _PharmacySearchPageState extends State<PharmacySearchPage> {
         _searchAttempts++;
       });
     } else {
-      Navigator.pushNamed(context, '/employeeSignUp');
+      Navigator.pushNamed(context as BuildContext, '/employeeSignUp');
     }
   }
 
   void _navigateToCustomerService() {
     Navigator.push(
-      context,
+      context as BuildContext,
       MaterialPageRoute(builder: (context) => CustomerServicePage()),
     );
   }
